@@ -1,5 +1,6 @@
-BOARD_VENDOR := xiaomi
-DEVICE_PATH := device/xiaomi/atom
+BOARD_VENDOR := planetcom
+DEVICE_PATH := device/planetcom/astroslide
+
 # Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
@@ -77,25 +78,10 @@ TARGET_SCREEN_DENSITY := 440
 # Graphics
 TARGET_ADDITIONAL_GRALLOC_10_USAGE_BITS := 0x2000U
 
-# Dex
-ifeq ($(HOST_OS),linux)
-    ifneq ($(TARGET_BUILD_VARIANT),eng)
-        ifeq ($(WITH_DEXPREOPT),)
-            WITH_DEXPREOPT := true
-            WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY := true
-        endif
-    endif
-endif
-
-# DRM
-TARGET_ENABLE_MEDIADRM_64 := true
-
 # Filesystem
 BOARD_HAS_LARGE_FILESYSTEM := true
 
-
 BOARD_SYSTEMIMAGE_PARTITION_TYPE := ext4
-
 
 # Dynamic Partitions
 BOARD_SUPER_PARTITION_GROUPS := main
